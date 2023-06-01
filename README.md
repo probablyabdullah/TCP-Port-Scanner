@@ -15,4 +15,6 @@ Overall, this script is a basic implementation of a port scanner and can be used
 Read More about this project in the desciption.
  
 **Sample Screenshot:**
+
+
 ![image](https://github.com/probablyabdullah/TCP-Port-Scanner/assets/79295754/74ab7989-abde-47e9-904c-db75afd5d61a)
