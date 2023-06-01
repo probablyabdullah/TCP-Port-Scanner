@@ -1,0 +1,25 @@
+Here you will find a complete explanation of how the code works:
+
+1. The code imports necessary modules:
+   - `socket`: Provides low-level networking interface for creating sockets.
+   - `threading`: Allows for concurrent execution of multiple threads.
+
+2. It prompts the user to enter their IP address and the range of ports to scan.
+
+3. It initializes some variables, including an empty `main_array` to store the open ports.
+
+4. It sets the default timeout for socket operations to 0.001 seconds.
+
+5. It defines a function `conn` that takes an IP address, port number, and a lock object as arguments. This function attempts to establish a TCP connection with the specified IP and port using a socket. If the connection is successful (result code 0), it adds the port to the `main_array`. The lock is used to ensure thread-safe access to the shared `main_array` list.
+
+6. The code enters a loop that iterates through the range of ports specified by the user. For each port, it creates a new thread that calls the `conn` function with the IP address, port number, and lock.
+
+7. The created threads are started, and references to them are stored in the `thread_array`.
+
+8. The code waits for all threads to complete using the `join()` method, ensuring that all port scan threads have finished.
+
+9. After the threads have finished, the code prints a separator line and displays the list of open ports stored in the `main_array`.
+
+10. Finally, it prints another separator line for visual separation.
+
+The code performs a simple TCP port scan, attempting to establish a connection with each port in the specified range. If a connection is successful, the port number is added to the `main_array`, which is then displayed as the result of the scan.
